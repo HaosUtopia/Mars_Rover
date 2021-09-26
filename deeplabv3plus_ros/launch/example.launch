@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="input_image" default="/stereo/camera2/right/image_raw" />
+  <arg name="model_path" default="$(find deeplabv3plus_ros)/frozen_graph/deeplabv3_mnv2_dm05_pascal_trainaug/frozen_inference_graph.pb" />
+
+  <node pkg="deeplabv3plus_ros" type="deeplabv3plus_ros.py" name="deeplabv3plus" output="screen">
+    <remap from="/image" to="$(arg input_image)" />
+    <remap from="/seg_map" to="/seg_map" />
+    <remap from="/seg_result" to="/seg_result" />
+    <param name="~model_path" value="$(arg model_path)" />
+  </node>
+</launch>
