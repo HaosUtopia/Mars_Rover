@@ -1,2 +1,2 @@
 # Mars_Rover
-isual servo
+visual servo for mars rover
