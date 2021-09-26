@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+   <node name="curiosity_rover_acker_man_node"
+		 pkg="curiosity_mars_rover_description"
+		 type="ackerman_6_wheels.py"
+		 respawn="false"
+		 output="screen"
+    	 args=""/>
+
+	<node name="curiosity_rover_arms_and_mast_services_node"
+		 pkg="curiosity_mars_rover_description"
+		 type="arm_and_mast.py"
+		 respawn="false"
+		 output="screen"
+    	 args=""/>
+ 		  
+</launch>

@@ -1,0 +1,124 @@
+# .yaml config file
+#
+# The PID gains and controller settings must be saved in a yaml file that gets loaded
+# to the param server via the roslaunch file (curiosity_mars_rover_control.launch).
+
+curiosity_mars_rover:
+  # Publish all joint states -----------------------------------
+  # Creates the /joint_states topic necessary in ROS
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Wheel Velocity Controllers ---------------------------------------
+  front_wheel_L_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: front_wheel_L_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  middle_wheel_L_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: middle_wheel_L_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  back_wheel_L_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: back_wheel_L_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  front_wheel_R_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: front_wheel_R_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  middle_wheel_R_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: middle_wheel_R_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  back_wheel_R_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: back_wheel_R_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+
+  # Wheel Trees Position Controllers ---------------------------------------
+  suspension_arm_F_L_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_arm_F_L_joint
+    pid: {p: 2200.0, i: 10.0, d: 10.0}
+  suspension_arm_B_L_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_arm_B_L_joint
+    pid: {p: 4200.0, i: 10.0, d: 10.0}
+  suspension_arm_B2_L_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_arm_B2_L_joint
+    pid: {p: 2200.0, i: 10.0, d: 10.0}
+
+  suspension_arm_F_R_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_arm_F_R_joint
+    pid: {p: 2200.0, i: 10.0, d: 10.0}
+  suspension_arm_B_R_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_arm_B_R_joint
+    pid: {p: 4200.0, i: 10.0, d: 10.0}
+  suspension_arm_B2_R_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_arm_B2_R_joint
+    pid: {p: 2200.0, i: 10.0, d: 10.0}
+
+  # Wheel Steering Position Controllers ---------------------------------------
+  suspension_steer_F_L_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_steer_F_L_joint
+    pid: {p: 1000.0, i: 10.0, d: 100.0}
+  suspension_steer_B_L_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_steer_B_L_joint
+    pid: {p: 1000.0, i: 10.0, d: 100.0}
+
+  suspension_steer_F_R_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_steer_F_R_joint
+    pid: {p: 1000.0, i: 10.0, d: 100.0}
+  suspension_steer_B_R_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: suspension_steer_B_R_joint
+    pid: {p: 1000.0, i: 10.0, d: 100.0}
+
+
+  # Sensor Mast Position Controllers ---------------------------------------
+  mast_p_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: mast_p_joint
+    pid: {p: 500.0, i: 10.0, d: 1000.0}
+  mast_02_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: mast_02_joint
+    pid: {p: 500.0, i: 10.0, d: 1000.0}
+  mast_cameras_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: mast_cameras_joint
+    pid: {p: 100.0, i: 10.0, d: 100.0}
+
+
+  # Arm Position Controllers ---------------------------------------
+  arm_01_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_01_joint
+    pid: {p: 500.0, i: 10.0, d: 1000.0}
+  arm_02_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_02_joint
+    pid: {p: 500.0, i: 10.0, d: 1000.0}
+  arm_03_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_03_joint
+    pid: {p: 500.0, i: 10.0, d: 1000.0}
+  arm_04_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_04_joint
+    pid: {p: 100.0, i: 10.0, d: 100.0}
+  arm_tools_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_tools_joint
+    pid: {p: 200.0, i: 10.0, d: 100.0}
+
+
+

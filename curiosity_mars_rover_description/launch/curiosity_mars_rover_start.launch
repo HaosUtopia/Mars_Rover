@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	<arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="1.0" />
+    <arg name="roll" default="0.0"/>
+    <arg name="pitch" default="0.0"/>
+    <arg name="yaw" default="3.14"/>
+
+	<include file="$(find curiosity_mars_rover_description)/launch/curiosity_mars_rover_spawn.launch">
+		<arg name="x" value="$(arg x)" />
+		<arg name="y" value="$(arg y)" />
+		<arg name="z" value="$(arg z)" />
+		<arg name="roll" value="$(arg roll)"/>
+		<arg name="pitch" value="$(arg pitch)"/>
+		<arg name="yaw" value="$(arg yaw)" />
+	</include>
+
+	<include file="$(find curiosity_mars_rover_description)/launch/curiosity_mars_rover_control.launch"/>
+	<!--include file="$(find curiosity_mars_rover_description)/launch/curiosity_mars_rover_systems.launch"/-->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find curiosity_mars_rover_description)/rviz/curiosity_mars_rover.rviz" />
+</launch>

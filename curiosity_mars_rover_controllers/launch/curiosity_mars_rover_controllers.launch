@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="ns" default="/curiosity_mars_rover"/>
+  
+  <group ns="$(arg ns)">
+  
+    <rosparam command="load" file="$(find curiosity_mars_rover_controllers)/config/curiosity_mars_rover_controllers.yaml"/>
+    
+    <node name="curiosity_mars_rover_controllers_spawner"
+          pkg="controller_manager"
+          type="spawner"
+          output="screen"
+          args="mobile_controller
+                arm_controller
+                mast_controller"/>
+  
+  </group>
+
+</launch>

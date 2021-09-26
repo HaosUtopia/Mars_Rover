@@ -1,0 +1,38 @@
+<library path="lib/libmobile_controller">
+
+  <class
+  name="curiosity_mars_rover_controllers/MobileController"
+  type="curiosity_mars_rover_controllers::MobileController"
+  base_class_type="controller_interface::ControllerBase">
+    <description>
+      The MobileController controls the basic motion of mobile base for the curiosity mars rover.
+    </description>
+  </class>
+
+</library>
+
+<library path="lib/libarm_controller">
+
+  <class
+  name="curiosity_mars_rover_controllers/ArmController"
+  type="curiosity_mars_rover_controllers::ArmController"
+  base_class_type="controller_interface::ControllerBase">
+    <description>
+      The ArmController controls the arm position for the curiosity mars rover.
+    </description>
+  </class>
+
+</library>
+
+<library path="lib/libmast_controller">
+
+  <class
+  name="curiosity_mars_rover_controllers/MastController"
+  type="curiosity_mars_rover_controllers::MastController"
+  base_class_type="controller_interface::ControllerBase">
+    <description>
+      The MastController controls the mast position for the curiosity mars rover.
+    </description>
+  </class>
+
+</library>

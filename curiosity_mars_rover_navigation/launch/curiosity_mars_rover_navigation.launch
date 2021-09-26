@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+
+   <!--master auto="start"/-->
+ <!-- Run the map server --> 
+    <!--node name="map_server" pkg="map_server" type="map_server" args="$(find my_map_package)/my_map.pgm my_map_resolution"/-->
+  <arg name="base_global_planner" default="navfn/NavfnROS"/>
+  <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS"/>
+    
+  <arg name="ns" default="/curiosity_mars_rover"/>
+  
+  <group ns="$(arg ns)">
+  
+  <node pkg="curiosity_mars_rover_navigation" type="odometry_broadcaster" name="odometry_broadcaster" output="screen"/>
+  
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find curiosity_mars_rover_navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find curiosity_mars_rover_navigation)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find curiosity_mars_rover_navigation)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find curiosity_mars_rover_navigation)/config/global_costmap_params.yaml" command="load" /> 
+    
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>
+    <param name="base_local_planner" value="$(arg base_local_planner)"/> 
+    <rosparam file="$(find curiosity_mars_rover_navigation)/config/base_local_planner_params.yaml" command="load" />
+  </node>
+  
+  </group>
+
+</launch> 

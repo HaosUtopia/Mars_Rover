@@ -1,0 +1,181 @@
+<sdf version="1.5">
+  <world name="default">
+  <gravity>0 0 -3.711</gravity>
+  <scene>
+    <background>202 150 66 1</background>
+    <ambient>0.4 0.4 0.4 1</ambient>
+    <shadows>1</shadows>
+  </scene>
+
+  <light type="directional" name="directional_light_1">
+    <pose>0 20 100 0.1 0.1 0</pose>
+    <diffuse>1 1 1 1</diffuse>
+    <specular>1 1 1 1</specular>
+    <attenuation>
+      <range>300</range>
+    </attenuation>
+    <direction>0.1 0.1 -1</direction>
+    <cast_shadows>false</cast_shadows>
+  </light>
+
+  <light name='sun' type='directional'>
+    <cast_shadows>1</cast_shadows>
+    <pose frame=''>0 0 10 0 -0 0</pose>
+    <diffuse>0.8 0.8 0.8 1</diffuse>
+    <specular>0.2 0.2 0.2 1</specular>
+    <attenuation>
+      <range>1000</range>
+      <constant>0.9</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <direction>-0.5 0.1 -0.9</direction>
+  </light>
+
+  <model name='curiosity_path'>
+    <static>1</static>
+    <link name='link'>
+      <inertial>
+        <mass>0.25</mass>
+        <inertia>
+          <ixx>0.00015</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00015</iyy>
+          <iyz>0</iyz>
+          <izz>0.00015</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <mesh>
+            <uri>model://curiosity_path/meshes/curiosity_path.stl</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://curiosity_path/meshes/mars_path_simple1.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <enable_wind>0</enable_wind>
+    </link>
+    <pose frame=''>-136.5 127 14.21 0 -0 0</pose>
+  </model>
+
+  <model name='jaggedrock3_clone_0'>
+    <static>1</static>
+    <link name='link'>
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.166667</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.166667</iyy>
+          <iyz>0</iyz>
+          <izz>0.166667</izz>
+        </inertia>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+      </inertial>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+      <collision name='collision'>
+        <geometry>
+          <mesh>
+            <uri>model://jaggedrock/meshes/jaggedrock_texture.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <patch_radius>0</patch_radius>
+              <surface_radius>0</surface_radius>
+              <use_patch_radius>1</use_patch_radius>
+              <ode>
+                <slip>0</slip>
+              </ode>
+            </torsional>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <collide_without_contact>0</collide_without_contact>
+            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+            <collide_bitmask>1</collide_bitmask>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+            <uri>model://jaggedrock/meshes/jaggedrock_texture.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <enable_wind>0</enable_wind>
+      </link>
+      <pose frame=''>1 10 -1 0 -0.008 1.7915</pose>
+    </model>
+  </world>
+</sdf>

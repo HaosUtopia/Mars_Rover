@@ -1,0 +1,7 @@
+global_costmap:
+  global_frame: world
+  robot_base_frame: base_footprint
+  update_frequency: 5.0
+  static_map: false
+  rolling_window: true
+  track_unknown_space: true

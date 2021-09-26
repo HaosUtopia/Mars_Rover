@@ -1,0 +1,7 @@
+# The SetCommand service will set command for the controller and return whether the command is set successfully
+
+uint16 goal_id
+controller_msgs/CommandStamped command
+---
+bool success
+string status_message

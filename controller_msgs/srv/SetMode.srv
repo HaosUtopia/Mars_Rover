@@ -1,0 +1,7 @@
+# The SetMode service will set mode by string for the controller and return whether the mode is set successfully
+
+uint16 goal_id
+controller_msgs/ModeStamped mode
+---
+bool success
+string status_message

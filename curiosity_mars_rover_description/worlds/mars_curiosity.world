@@ -1,0 +1,18 @@
+<sdf version="1.5">
+  <world name="default">
+
+    <!-- Martian Gravity-->
+    <gravity>0 0 -3.711</gravity>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://curiosity_path</uri>
+      <name>curiosity_path</name>
+      <pose>0 0 9 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

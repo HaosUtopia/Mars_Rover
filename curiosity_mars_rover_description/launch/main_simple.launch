@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	<include file="$(find curiosity_mars_rover_description)/launch/mars_curiosity_simple_world.launch"/>
+	<include file="$(find curiosity_mars_rover_description)/launch/curiosity_mars_rover_start.launch"/>
+</launch>

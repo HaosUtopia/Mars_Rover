@@ -1,0 +1,16 @@
+mobile_controller:
+  type: "curiosity_mars_rover_controllers/MobileController"
+
+  x_of: 1.215
+  x_or: 1.0722
+  y_of: 1.05345
+  y_om: 1.18285
+  y_or: 1.05135
+  
+  command_topic: "/curiosity_mars_rover/cmd_vel"
+  
+arm_controller:
+  type: "curiosity_mars_rover_controllers/ArmController"
+  
+mast_controller:
+  type: "curiosity_mars_rover_controllers/MastController"

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <rosparam file="$(find curiosity_mars_rover_description)/config/curiosity_mars_rover_control.yaml"
+            command="load"/>
+
+  <node name="robot_state_publisher_curiosity_mars_rover" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+            <param name="publish_frequency" type="double" value="5.0" />
+            
+            <remap from="/joint_states" to="/curiosity_mars_rover/joint_states" />
+        </node>
+
+  <arg name="ns" default="/curiosity_mars_rover"/>
+  
+  <group ns="$(arg ns)">
+
+  <!--node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" args="joint_state_controller
+                              front_wheel_L_joint_velocity_controller
+                              middle_wheel_L_joint_velocity_controller
+                              back_wheel_L_joint_velocity_controller
+                              front_wheel_R_joint_velocity_controller
+                              middle_wheel_R_joint_velocity_controller
+                              back_wheel_R_joint_velocity_controller
+                              suspension_arm_F_L_joint_position_controller
+                              suspension_arm_B_L_joint_position_controller
+                              suspension_arm_B2_L_joint_position_controller
+                              suspension_arm_F_R_joint_position_controller
+                              suspension_arm_B_R_joint_position_controller
+                              suspension_arm_B2_R_joint_position_controller
+                              suspension_steer_F_L_joint_position_controller
+                              suspension_steer_B_L_joint_position_controller
+                              suspension_steer_F_R_joint_position_controller
+                              suspension_steer_B_R_joint_position_controller
+                              mast_p_joint_position_controller
+                              mast_02_joint_position_controller
+                              mast_cameras_joint_position_controller
+                              arm_01_joint_position_controller
+                              arm_02_joint_position_controller
+                              arm_03_joint_position_controller
+                              arm_04_joint_position_controller
+                              arm_tools_joint_position_controller">
+  </node-->
+  
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" args="joint_state_controller">
+  </node>
+  
+  </group>
+
+</launch>
