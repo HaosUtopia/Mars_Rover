@@ -33,7 +33,7 @@ mode_name: "open"
 ### Run simple environment
 $ roslaunch curiosity_mars_rover_description main_simple.launch
 
-### Run object tracking system
+### Run object tracking
 $ roslaunch deeplabv3plus_ros example.launch
 ```
 
