@@ -37,5 +37,5 @@ roslaunch curiosity_mars_rover_description main_simple.launch
 roslaunch deeplabv3plus_ros example.launch
 ```
 
-
+![](https://github.com/HaosUtopia/Mars_Rover/blob/main/deeplabv3plus_ros/imgs/object_tracking_gazebo.png)
 
