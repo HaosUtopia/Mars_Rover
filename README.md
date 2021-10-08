@@ -1,4 +1,6 @@
-# Mars_Rover
+<h1 align="center">
+  Mars Rover
+</h1>
 
 ![](https://github.com/HaosUtopia/Mars_Rover/blob/main/deeplabv3plus_ros/imgs/mars_env_gazebo.png)
 
