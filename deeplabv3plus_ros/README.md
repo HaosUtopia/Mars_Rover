@@ -1,5 +1,5 @@
 # deeplabv3plus_ros
-
+![](https://github.com/HaosUtopia/Mars_Rover/blob/main/deeplabv3plus_ros/imgs/mars_rover_mastcam_rock_tracking.gif)
 This is a ROS package of [DeeplabV3+](https://arxiv.org/abs/1802.02611). Most of core algorighm code was based on [Deeplab implementation by tensorflow](https://github.com/tensorflow/models/tree/master/research/deeplab).
 
 ## Requirements
